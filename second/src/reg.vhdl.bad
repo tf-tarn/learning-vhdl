@@ -1,0 +1,31 @@
+---------------------------------------------------------
+-- VHDL model for tri state driver				  
+-- by Weijun Zhang, 05/2001
+--
+-- this friver often used to control system outputs	
+---------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity reg is
+  port(
+    clr, load, clk : in  std_logic;
+    d_in           : in  std_logic_vector(7 downto 0);
+    d_out          : out std_logic_vector(7 downto 0)
+  );
+end entity reg;
+
+architecture rtl of reg is
+begin
+process(clk) is
+begin
+  if rising_edge(clk) then
+    if clr = '1' then
+      d_out <= "00000000";
+    elsif load = '1' then
+      d_out <= d_in;
+    end if;
+  end if;
+end process;
+end architecture rtl; 
