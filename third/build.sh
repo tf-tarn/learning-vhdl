@@ -30,7 +30,7 @@ case $1 in
         ;;
     control)
         DIR=$PWD
-        SOURCES=("decoder_1ofN.vhdl" "register.vhdl" "control.vhdl")
+        SOURCES=("decoder_1ofN.vhdl" "register.vhdl" "control.vhdl" "upcounter.vhdl" "control.tb.vhdl")
         TARGET=TB_$1
         run_the_thing
         ;;
@@ -38,6 +38,12 @@ case $1 in
         DIR=$PWD
         SOURCES=("adder.vhdl" "adder.tb.vhdl")
         TARGET=adder_tb
+        run_the_thing
+        ;;
+    decoder_1ofN)
+        DIR=$PWD
+        SOURCES=("decoder_1ofN.vhdl" "decoder_1ofN.tb.vhdl")
+        TARGET=TB_decoder_one_of_many
         run_the_thing
         ;;
 esac

@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Dec 17 11:05:32 2022
+[*]
+[dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
+[dumpfile_mtime] "Sat Dec 17 11:05:00 2022"
+[dumpfile_size] 9914
+[savefile] "/home/tarn/projects/snickerdoodle/third/control.gtkw"
+[timestart] 0
+[size] 1681 686
+[pos] -1 -1
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_control.
+[sst_width] 214
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 182
+@28
+top.tb_control.t_reset
+top.tb_control.t_clk
+top.tb_control.t_clk2
+@22
+#{top.tb_control.count[7:0]} top.tb_control.count[7] top.tb_control.count[6] top.tb_control.count[5] top.tb_control.count[4] top.tb_control.count[3] top.tb_control.count[2] top.tb_control.count[1] top.tb_control.count[0]
+#{top.tb_control.t_out0[15:0]} top.tb_control.t_out0[15] top.tb_control.t_out0[14] top.tb_control.t_out0[13] top.tb_control.t_out0[12] top.tb_control.t_out0[11] top.tb_control.t_out0[10] top.tb_control.t_out0[9] top.tb_control.t_out0[8] top.tb_control.t_out0[7] top.tb_control.t_out0[6] top.tb_control.t_out0[5] top.tb_control.t_out0[4] top.tb_control.t_out0[3] top.tb_control.t_out0[2] top.tb_control.t_out0[1] top.tb_control.t_out0[0]
+@23
+#{top.tb_control.t_out1[15:0]} top.tb_control.t_out1[15] top.tb_control.t_out1[14] top.tb_control.t_out1[13] top.tb_control.t_out1[12] top.tb_control.t_out1[11] top.tb_control.t_out1[10] top.tb_control.t_out1[9] top.tb_control.t_out1[8] top.tb_control.t_out1[7] top.tb_control.t_out1[6] top.tb_control.t_out1[5] top.tb_control.t_out1[4] top.tb_control.t_out1[3] top.tb_control.t_out1[2] top.tb_control.t_out1[1] top.tb_control.t_out1[0]
+[pattern_trace] 1
+[pattern_trace] 0

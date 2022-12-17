@@ -7,15 +7,34 @@ end TB_control;
 
 architecture TB of TB_control is
 
-component control is
-  port(
-    clk:         in std_logic;
-    reset:       in std_logic
-  );
-end component;
+  component control is
+    port(
+      reset:      in std_logic;
+      clk:        in std_logic;
+      en0:        in std_logic;
+      en1:        in std_logic;
+      d_in:       in unsigned(7 downto 0);
+      out0:	out unsigned(15 downto 0);
+      out1:	out unsigned(15 downto 0)
+    );
+  end component;
+
+  component upcounter is
+    generic(m: natural := 8);
+    port(
+      reset:	in std_logic;
+      clk:      in std_logic;
+      d_out:	out unsigned(7 downto 0)
+    );
+  end component;
+
 
 signal T_reset: std_logic;
 signal T_clk: std_logic;
+signal T_clk2: std_logic;
+signal count: unsigned(7 downto 0);
+signal T_out0: unsigned(15 downto 0);
+signal T_out1: unsigned(15 downto 0);
 
 procedure pulse(signal clock: out std_logic) is
 begin
@@ -26,19 +45,44 @@ begin
 end procedure pulse;
 
     begin
-
-      U_UT: control port map (T_clk, T_reset);
-
+      counter: upcounter
+        port map (T_reset, T_clk, count);
+      U_UT: control
+        port map (T_reset, T_clk2, '0', '0', count, T_out0, T_out1);
     process
     begin
-      T_clk <= '0';
       T_reset <= '0';
+      T_clk <= '0';
+      T_clk2 <= '0';
       pulse(T_reset);
       report "reset" severity warning;
 
-      for i in 1 to 100 loop
-        pulse(T_clk);
-      end loop;       
+      wait for 10 ns;
+
+      for i in 1 to 260 loop
+        T_clk <= '1';
+        T_clk2 <= '0';
+        wait for 10 ns;
+        T_clk <= '0';
+        T_clk2 <= '1';
+        wait for 10 ns;
+
+        assert(count = to_unsigned(i, 9)(7 downto 0))
+          report "failed: count "
+          & " was " & integer'image(to_integer(count))
+          & ", expected " & integer'image(i)
+          severity warning;
+        assert(to_integer(T_out0) = shift_left(to_unsigned(1, 16), to_integer(to_unsigned(i, 9)(3 downto 0))))
+          report "failed: out0 "
+          & " was " & integer'image(to_integer(T_out0))
+          & ", expected " & integer'image(to_integer(shift_left(to_unsigned(1, 16), to_integer(to_unsigned(i, 9)(3 downto 0)))))
+          severity warning;
+        assert(to_integer(T_out1) = shift_left(to_unsigned(1, 16), to_integer(to_unsigned(i, 9)(7 downto 4))))
+          report "failed: out1 "
+          & " was " & integer'image(to_integer(T_out1))
+          & ", expected " & integer'image(to_integer(shift_left(to_unsigned(1, 16), to_integer(to_unsigned(i, 9)(7 downto 4)))))
+          severity warning;
+      end loop;
 
       wait;
 

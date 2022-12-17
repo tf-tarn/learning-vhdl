@@ -4,6 +4,7 @@ use ieee.numeric_std.all;
 
 entity control is
   port(
+    reset:      in std_logic;
     clk:        in std_logic;
     en0:        in std_logic;
     en1:        in std_logic;
@@ -15,12 +16,14 @@ end control;
 
 architecture behavior of control is
 
-component decoder_one_of_many is
-  port(
-    d_in:       in unsigned(3 downto 0);
-    d_out:	out unsigned(15 downto 0)
-  );
-end component;
+  component decoder_one_of_many is
+    generic(n: natural := 4);
+    port(
+      en:         in std_logic;
+      d_in:       in unsigned(n-1 downto 0);
+      d_out:	out unsigned((2**n)-1 downto 0)
+    );
+  end component;
 
 component reg
   port(
@@ -38,7 +41,7 @@ begin
 
   control_reg: reg
     port map (
-      clr => '0',
+      clr => reset,
       load => '1',
       clk => clk,
       d_in => d_in,
@@ -47,12 +50,14 @@ begin
 
   decoder1: decoder_one_of_many
     port map (
+      en => '1',
       d_in => internal(7 downto 4),
       d_out => out1
     );
 
   decoder0: decoder_one_of_many
     port map (
+      en => '1',
       d_in => internal(3 downto 0),
       d_out => out0
     );
