@@ -13,7 +13,7 @@ end decoder_one_of_many;
 
 architecture behavior of decoder_one_of_many is
 begin
-  process(d_in)
+  process(d_in, en)
   begin
     d_out <= (others => '0');
     d_out(to_integer(unsigned(d_in))) <= en;

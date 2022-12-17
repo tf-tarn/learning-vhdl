@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Dec 17 14:58:13 2022
+[*]
+[dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
+[dumpfile_mtime] "Sat Dec 17 14:57:47 2022"
+[dumpfile_size] 4470
+[savefile] "/home/tarn/projects/snickerdoodle/third/core.gtkw"
+[timestart] 0
+[size] 3836 1042
+[pos] -2156 -616
+*-27.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_core.
+[treeopen] top.tb_core.u_ut.
+[treeopen] top.tb_core.u_ut.instruction_executor.
+[treeopen] top.tb_core.u_ut.instruction_executor.control_reg.
+[treeopen] top.tb_core.u_ut.instruction_executor.decoder0.
+[treeopen] top.tb_core.u_ut.instruction_executor.decoder1.
+[treeopen] top.tb_core.u_ut.reg_il.
+[sst_width] 258
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 500
+@28
+top.tb_core.t_reset
+top.tb_core.t_clk
+#{top.tb_core.u_ut.step[2:0]} top.tb_core.u_ut.step[2] top.tb_core.u_ut.step[1] top.tb_core.u_ut.step[0]
+top.tb_core.u_ut.icg.send_enable
+top.tb_core.u_ut.icg.load_enable
+top.tb_core.u_ut.instruction_cycle_control.send_mem
+top.tb_core.u_ut.instruction_cycle_control.increment_pc
+top.tb_core.u_ut.instruction_cycle_control.load_control_word
+top.tb_core.u_ut.instruction_cycle_control.load_reg_il
++{IL reset} top.tb_core.u_ut.reg_il.clr
+@22
++{IL out} #{top.tb_core.u_ut.reg_il.d_out[7:0]} top.tb_core.u_ut.reg_il.d_out[7] top.tb_core.u_ut.reg_il.d_out[6] top.tb_core.u_ut.reg_il.d_out[5] top.tb_core.u_ut.reg_il.d_out[4] top.tb_core.u_ut.reg_il.d_out[3] top.tb_core.u_ut.reg_il.d_out[2] top.tb_core.u_ut.reg_il.d_out[1] top.tb_core.u_ut.reg_il.d_out[0]
+@28
+top.tb_core.u_ut.instruction_cycle_control.execute_instruction
+#{top.tb_core.u_ut.pc_out[2:0]} top.tb_core.u_ut.pc_out[2] top.tb_core.u_ut.pc_out[1] top.tb_core.u_ut.pc_out[0]
+@22
+#{top.tb_core.u_ut.data_bus[7:0]} top.tb_core.u_ut.data_bus[7] top.tb_core.u_ut.data_bus[6] top.tb_core.u_ut.data_bus[5] top.tb_core.u_ut.data_bus[4] top.tb_core.u_ut.data_bus[3] top.tb_core.u_ut.data_bus[2] top.tb_core.u_ut.data_bus[1] top.tb_core.u_ut.data_bus[0]
++{Control Word} #{top.tb_core.u_ut.instruction_executor.control_reg.d_out[7:0]} top.tb_core.u_ut.instruction_executor.control_reg.d_out[7] top.tb_core.u_ut.instruction_executor.control_reg.d_out[6] top.tb_core.u_ut.instruction_executor.control_reg.d_out[5] top.tb_core.u_ut.instruction_executor.control_reg.d_out[4] top.tb_core.u_ut.instruction_executor.control_reg.d_out[3] top.tb_core.u_ut.instruction_executor.control_reg.d_out[2] top.tb_core.u_ut.instruction_executor.control_reg.d_out[1] top.tb_core.u_ut.instruction_executor.control_reg.d_out[0]
+#{top.tb_core.u_ut.instruction_executor.decoder0.d_out[15:0]} top.tb_core.u_ut.instruction_executor.decoder0.d_out[15] top.tb_core.u_ut.instruction_executor.decoder0.d_out[14] top.tb_core.u_ut.instruction_executor.decoder0.d_out[13] top.tb_core.u_ut.instruction_executor.decoder0.d_out[12] top.tb_core.u_ut.instruction_executor.decoder0.d_out[11] top.tb_core.u_ut.instruction_executor.decoder0.d_out[10] top.tb_core.u_ut.instruction_executor.decoder0.d_out[9] top.tb_core.u_ut.instruction_executor.decoder0.d_out[8] top.tb_core.u_ut.instruction_executor.decoder0.d_out[7] top.tb_core.u_ut.instruction_executor.decoder0.d_out[6] top.tb_core.u_ut.instruction_executor.decoder0.d_out[5] top.tb_core.u_ut.instruction_executor.decoder0.d_out[4] top.tb_core.u_ut.instruction_executor.decoder0.d_out[3] top.tb_core.u_ut.instruction_executor.decoder0.d_out[2] top.tb_core.u_ut.instruction_executor.decoder0.d_out[1] top.tb_core.u_ut.instruction_executor.decoder0.d_out[0]
+@23
+#{top.tb_core.u_ut.instruction_executor.decoder1.d_out[15:0]} top.tb_core.u_ut.instruction_executor.decoder1.d_out[15] top.tb_core.u_ut.instruction_executor.decoder1.d_out[14] top.tb_core.u_ut.instruction_executor.decoder1.d_out[13] top.tb_core.u_ut.instruction_executor.decoder1.d_out[12] top.tb_core.u_ut.instruction_executor.decoder1.d_out[11] top.tb_core.u_ut.instruction_executor.decoder1.d_out[10] top.tb_core.u_ut.instruction_executor.decoder1.d_out[9] top.tb_core.u_ut.instruction_executor.decoder1.d_out[8] top.tb_core.u_ut.instruction_executor.decoder1.d_out[7] top.tb_core.u_ut.instruction_executor.decoder1.d_out[6] top.tb_core.u_ut.instruction_executor.decoder1.d_out[5] top.tb_core.u_ut.instruction_executor.decoder1.d_out[4] top.tb_core.u_ut.instruction_executor.decoder1.d_out[3] top.tb_core.u_ut.instruction_executor.decoder1.d_out[2] top.tb_core.u_ut.instruction_executor.decoder1.d_out[1] top.tb_core.u_ut.instruction_executor.decoder1.d_out[0]
+[pattern_trace] 1
+[pattern_trace] 0

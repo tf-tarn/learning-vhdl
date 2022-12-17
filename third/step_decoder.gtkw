@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Dec 17 14:29:26 2022
+[*]
+[dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
+[dumpfile_mtime] "Sat Dec 17 14:28:21 2022"
+[dumpfile_size] 809
+[savefile] "/home/tarn/projects/snickerdoodle/third/step_decoder.gtkw"
+[timestart] 0
+[size] 3836 1042
+[pos] -2161 -1185
+*-26.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_step_decoder.
+[treeopen] top.tb_step_decoder.u_ut.
+[sst_width] 258
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 500
+@28
+#{top.tb_step_decoder.step[2:0]} top.tb_step_decoder.step[2] top.tb_step_decoder.step[1] top.tb_step_decoder.step[0]
+top.tb_step_decoder.load_enable
+top.tb_step_decoder.send_enable
+top.tb_step_decoder.load_pc
+top.tb_step_decoder.send_mem
+top.tb_step_decoder.execute_instruction
+top.tb_step_decoder.load_reg_il
+@29
+top.tb_step_decoder.load_control_word
+[pattern_trace] 1
+[pattern_trace] 0

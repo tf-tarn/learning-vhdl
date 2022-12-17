@@ -21,12 +21,14 @@ component upcounter is
   );
 end component;
 
-component decoder_one_of_many is
-  port(
-    d_in:       in unsigned(2 downto 0);
-    d_out:	out unsigned(7 downto 0)
-  );
-end component;
+  component decoder_one_of_many is
+    generic(n: natural := 3);
+    port(
+      en:         in std_logic;
+      d_in:       in unsigned(n-1 downto 0);
+      d_out:	out unsigned((2**n)-1 downto 0)
+    );
+  end component;
 
 signal count   : unsigned(2 downto 0);
 
@@ -37,6 +39,7 @@ begin
     d_out => count
     );
   decoder: decoder_one_of_many port map (
+    en => '1',
     d_in => unsigned(count),
     d_out => d_out
     );

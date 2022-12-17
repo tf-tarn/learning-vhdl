@@ -8,10 +8,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 entity tristate_buffer is
-port(
+  port(
     d_in:	in std_logic_vector(7 downto 0);
-        en:     in std_logic;
-        d_out:	out std_logic_vector(7 downto 0)
+    en:         in std_logic;
+    d_out:	out std_logic_vector(7 downto 0)
 );
 end tristate_buffer;
 

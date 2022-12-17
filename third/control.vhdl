@@ -6,6 +6,7 @@ entity control is
   port(
     reset:      in std_logic;
     clk:        in std_logic;
+    en:         in std_logic;
     en0:        in std_logic;
     en1:        in std_logic;
     d_in:       in unsigned(7 downto 0);
@@ -36,8 +37,13 @@ end component;
 -- signal internal0 : unsigned(7 downto 0);
 -- signal internal1 : unsigned(7 downto 0);
 signal internal : unsigned(7 downto 0);
+signal actually_en0 : std_logic;
+signal actually_en1 : std_logic;
 
 begin
+
+  actually_en0 <= en and en0;
+  actually_en1 <= en and en1;
 
   control_reg: reg
     port map (
@@ -50,14 +56,14 @@ begin
 
   decoder1: decoder_one_of_many
     port map (
-      en => '1',
+      en => actually_en1,
       d_in => internal(7 downto 4),
       d_out => out1
     );
 
   decoder0: decoder_one_of_many
     port map (
-      en => '1',
+      en => actually_en0,
       d_in => internal(3 downto 0),
       d_out => out0
     );

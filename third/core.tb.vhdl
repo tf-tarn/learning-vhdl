@@ -34,6 +34,9 @@ end procedure pulse;
       T_clk <= '0';
       T_reset <= '0';
       pulse(T_reset);
+      pulse(T_reset);
+      pulse(T_reset);
+      pulse(T_reset);
       report "reset" severity warning;
 
       for i in 1 to 100 loop

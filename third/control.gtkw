@@ -1,29 +1,33 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sat Dec 17 11:05:32 2022
+[*] Sat Dec 17 13:10:35 2022
 [*]
-[dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
-[dumpfile_mtime] "Sat Dec 17 11:05:00 2022"
-[dumpfile_size] 9914
+[dumpfile] "(null)"
 [savefile] "/home/tarn/projects/snickerdoodle/third/control.gtkw"
 [timestart] 0
-[size] 1681 686
-[pos] -1 -1
-*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 3836 1042
+[pos] -2156 -357
+*-27.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
-[treeopen] top.tb_control.
-[sst_width] 214
+[treeopen] top.tb_core.
+[treeopen] top.tb_core.u_ut.
+[treeopen] top.tb_core.u_ut.control_decoder.
+[treeopen] top.tb_core.u_ut.mem.
+[treeopen] top.tb_core.u_ut.pc.
+[sst_width] 258
 [signals_width] 126
 [sst_expanded] 1
-[sst_vpaned_height] 182
+[sst_vpaned_height] 522
 @28
-top.tb_control.t_reset
-top.tb_control.t_clk
-top.tb_control.t_clk2
+top.tb_core.t_reset
+top.tb_core.t_clk
+@24
+#{top.tb_core.u_ut.seqgen.count[2:0]} top.tb_core.u_ut.seqgen.count[2] top.tb_core.u_ut.seqgen.count[1] top.tb_core.u_ut.seqgen.count[0]
+@28
+#{top.tb_core.u_ut.pc.d_out[2:0]} top.tb_core.u_ut.pc.d_out[2] top.tb_core.u_ut.pc.d_out[1] top.tb_core.u_ut.pc.d_out[0]
 @22
-#{top.tb_control.count[7:0]} top.tb_control.count[7] top.tb_control.count[6] top.tb_control.count[5] top.tb_control.count[4] top.tb_control.count[3] top.tb_control.count[2] top.tb_control.count[1] top.tb_control.count[0]
-#{top.tb_control.t_out0[15:0]} top.tb_control.t_out0[15] top.tb_control.t_out0[14] top.tb_control.t_out0[13] top.tb_control.t_out0[12] top.tb_control.t_out0[11] top.tb_control.t_out0[10] top.tb_control.t_out0[9] top.tb_control.t_out0[8] top.tb_control.t_out0[7] top.tb_control.t_out0[6] top.tb_control.t_out0[5] top.tb_control.t_out0[4] top.tb_control.t_out0[3] top.tb_control.t_out0[2] top.tb_control.t_out0[1] top.tb_control.t_out0[0]
+#{top.tb_core.u_ut.mem.d_out[7:0]} top.tb_core.u_ut.mem.d_out[7] top.tb_core.u_ut.mem.d_out[6] top.tb_core.u_ut.mem.d_out[5] top.tb_core.u_ut.mem.d_out[4] top.tb_core.u_ut.mem.d_out[3] top.tb_core.u_ut.mem.d_out[2] top.tb_core.u_ut.mem.d_out[1] top.tb_core.u_ut.mem.d_out[0]
 @23
-#{top.tb_control.t_out1[15:0]} top.tb_control.t_out1[15] top.tb_control.t_out1[14] top.tb_control.t_out1[13] top.tb_control.t_out1[12] top.tb_control.t_out1[11] top.tb_control.t_out1[10] top.tb_control.t_out1[9] top.tb_control.t_out1[8] top.tb_control.t_out1[7] top.tb_control.t_out1[6] top.tb_control.t_out1[5] top.tb_control.t_out1[4] top.tb_control.t_out1[3] top.tb_control.t_out1[2] top.tb_control.t_out1[1] top.tb_control.t_out1[0]
+#{top.tb_core.u_ut.seq[7:0]} top.tb_core.u_ut.seq[7] top.tb_core.u_ut.seq[6] top.tb_core.u_ut.seq[5] top.tb_core.u_ut.seq[4] top.tb_core.u_ut.seq[3] top.tb_core.u_ut.seq[2] top.tb_core.u_ut.seq[1] top.tb_core.u_ut.seq[0]
 [pattern_trace] 1
 [pattern_trace] 0
