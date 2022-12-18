@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Dec 18 14:17:10 2022
+[*]
+[dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
+[dumpfile_mtime] "Sun Dec 18 14:16:30 2022"
+[dumpfile_size] 444
+[savefile] "/home/tarn/projects/snickerdoodle/third/sr.gtkw"
+[timestart] 0
+[size] 1681 427
+[pos] -1 -1
+*-25.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_sr.
+[sst_width] 214
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 91
+@28
+top.tb_sr.reset
+top.tb_sr.clk
+top.tb_sr.set
+@29
+top.tb_sr.q
+[pattern_trace] 1
+[pattern_trace] 0
