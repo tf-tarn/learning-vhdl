@@ -12,7 +12,7 @@ end entity reg;
 
 architecture rtl of reg is
 begin
-process(clk) is
+process(clk, clr, load) is
 begin
   if clr = '1' then
     d_out <= to_unsigned(0, d_out'length);

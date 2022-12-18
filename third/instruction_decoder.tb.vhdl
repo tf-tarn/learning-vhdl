@@ -2,15 +2,16 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity TB_control is
-end TB_control;
+entity TB_instruction_decoder is
+end TB_instruction_decoder;
 
-architecture TB of TB_control is
+architecture TB of TB_instruction_decoder is
 
-  component control is
+  component instruction_decoder is
     port(
       reset:      in std_logic;
       clk:        in std_logic;
+      en:         in std_logic;
       en0:        in std_logic;
       en1:        in std_logic;
       d_in:       in unsigned(7 downto 0);
@@ -47,10 +48,11 @@ end procedure pulse;
     begin
       counter: upcounter
         port map (T_reset, T_clk, count);
-      U_UT: control
-        port map (T_reset, T_clk2, '0', '0', count, T_out0, T_out1);
+      U_UT: instruction_decoder
+        port map (T_reset, T_clk2, '1', '1', '1', count, T_out0, T_out1);
     process
     begin
+      report "TODO test en*" severity warning;
       T_reset <= '0';
       T_clk <= '0';
       T_clk2 <= '0';

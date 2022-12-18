@@ -15,7 +15,7 @@ component step_decoder is
     load_enable: in std_logic;
 
     increment_pc: out std_logic;
-    load_control_word: out std_logic;
+    load_instruction_decoder_word: out std_logic;
     load_reg_il: out std_logic;
 
     execute_instruction: out std_logic;
@@ -28,7 +28,7 @@ end component step_decoder;
     signal send_enable:  std_logic;
     signal load_enable:  std_logic;
     signal increment_pc:  std_logic;
-    signal load_control_word:  std_logic;
+    signal load_instruction_decoder_word:  std_logic;
     signal load_reg_il:  std_logic;
     signal execute_instruction:  std_logic;
     signal send_mem:  std_logic;
@@ -43,7 +43,7 @@ begin
 end procedure pulse;
 begin
   U_UT: step_decoder
-    port map (step, send_enable, load_enable, increment_pc, load_control_word, load_reg_il, execute_instruction, send_mem);
+    port map (step, send_enable, load_enable, increment_pc, load_instruction_decoder_word, load_reg_il, execute_instruction, send_mem);
   process
   begin
     step <= "000";

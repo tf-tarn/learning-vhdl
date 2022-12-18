@@ -13,7 +13,6 @@ architecture struct of core is
 
   component tinyrom is
     port(
-      clk:     in std_logic;
       en:      in std_logic;
       addr_in:       in unsigned(2 downto 0);
       d_out:	   out unsigned(7 downto 0)
@@ -56,7 +55,7 @@ architecture struct of core is
     );
   end component;
 
-  component control is
+  component instruction_decoder is
     port(
       reset:      in std_logic;
       clk:        in std_logic;
@@ -94,7 +93,7 @@ component step_decoder is
     load_enable: in std_logic;
 
     increment_pc: out std_logic;
-    load_control_word: out std_logic;
+    load_instruction_decoder_word: out std_logic;
     load_reg_il: out std_logic;
 
     execute_instruction: out std_logic;
@@ -107,16 +106,27 @@ signal pc_out       : unsigned(2 downto 0);
 signal data_bus     : unsigned(7 downto 0);
 -- signal data_bus     : unsigned(7 downto 0);
 signal step          : unsigned(2 downto 0);
-signal step_vector   : unsigned(2 downto 0);
-signal control_word : unsigned(7 downto 0);
+signal instruction_decoder_word : unsigned(7 downto 0);
 signal send_enable   : std_logic;
 signal load_enable   : std_logic;
 
 signal increment_pc: std_logic;
-signal load_control_word: std_logic;
+signal load_instruction_decoder_word: std_logic;
 signal load_reg_il: std_logic;
 signal execute_instruction: std_logic;
 signal send_mem: std_logic;
+
+signal inst_send_control: unsigned(15 downto 0);
+signal inst_load_control: unsigned(15 downto 0);
+
+constant SEND_IL_IDX : natural := 8;
+constant SEND_R_IDX : natural := 11;
+constant SEND_X_IDX : natural := 5;
+constant SEND_Y_IDX : natural := 1;
+
+constant LOAD_R_IDX : natural := 11;
+constant LOAD_X_IDX : natural := 5;
+constant LOAD_Y_IDX : natural := 1;
 
 begin
   icg: instruction_cycle_generator
@@ -128,14 +138,14 @@ begin
       load_enable => load_enable
       );
 
-  instruction_cycle_control: step_decoder
+  instruction_cycle_step_decoder: step_decoder
     port map (
       step => step,
       send_enable => send_enable,
       load_enable => load_enable,
 
       increment_pc => increment_pc,
-      load_control_word => load_control_word,
+      load_instruction_decoder_word => load_instruction_decoder_word,
       load_reg_il => load_reg_il,
 
       execute_instruction => execute_instruction,
@@ -143,16 +153,16 @@ begin
       send_mem => send_mem
     );
 
-  instruction_executor: control
+  the_instruction_decoder: instruction_decoder
     port map (
       reset => reset,
-      clk => load_control_word,
+      clk => load_instruction_decoder_word,
       en => execute_instruction,
-      en0 => send_enable,
-      en1 => load_enable,
+      en0 => load_enable,
+      en1 => send_enable,
       d_in => data_bus,
-      out0 => open,
-      out1 => open
+      out0 => inst_load_control,
+      out1 => inst_send_control
       );
 
   pc: upcounter
@@ -162,22 +172,56 @@ begin
       d_out => pc_out
     );
 
-  mem: tinyrom
-    port map (
-      clk => clk,
-      addr_in => pc_out,
-      en => send_mem,
-      d_out => data_bus
-    );
-
   reg_il: reg_tristate
     port map (
       clr => reset,
       load => '1',
       clk => load_reg_il,
-      en => '1',
+      en => inst_send_control(SEND_IL_IDX),
       d_in => data_bus,
-      d_out => open
+      d_out => data_bus
+    );
+
+------------------------------------------------------------
+-- Memory
+  mem: tinyrom
+    port map (
+      addr_in => pc_out,
+      en => send_mem,
+      d_out => data_bus
+    );
+
+------------------------------------------------------------
+-- General-purpose registers
+  
+  reg_r: reg_tristate
+    port map (
+      clr => reset,
+      load => '1',
+      clk => inst_load_control(LOAD_R_IDX),
+      en => inst_send_control(SEND_R_IDX),
+      d_in => data_bus,
+      d_out => data_bus
+    );
+
+  reg_x: reg_tristate
+    port map (
+      clr => reset,
+      load => '1',
+      clk => inst_load_control(LOAD_X_IDX),
+      en => inst_send_control(SEND_X_IDX),
+      d_in => data_bus,
+      d_out => data_bus
+    );
+
+  reg_y: reg_tristate
+    port map (
+      clr => reset,
+      load => '1',
+      clk => inst_load_control(LOAD_Y_IDX),
+      en => inst_send_control(SEND_Y_IDX),
+      d_in => data_bus,
+      d_out => data_bus
     );
 
 end struct;

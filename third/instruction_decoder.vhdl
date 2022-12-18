@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity control is
+entity instruction_decoder is
   port(
     reset:      in std_logic;
     clk:        in std_logic;
@@ -13,9 +13,9 @@ entity control is
     out0:	out unsigned(15 downto 0);
     out1:	out unsigned(15 downto 0)
   );
-end control;
+end instruction_decoder;
 
-architecture behavior of control is
+architecture behavior of instruction_decoder is
 
   component decoder_one_of_many is
     generic(n: natural := 4);
@@ -45,7 +45,7 @@ begin
   actually_en0 <= en and en0;
   actually_en1 <= en and en1;
 
-  control_reg: reg
+  instruction_decoder_reg: reg
     port map (
       clr => reset,
       load => '1',

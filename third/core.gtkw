@@ -1,48 +1,57 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sat Dec 17 14:58:13 2022
+[*] Sun Dec 18 01:54:07 2022
 [*]
 [dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
-[dumpfile_mtime] "Sat Dec 17 14:57:47 2022"
-[dumpfile_size] 4470
+[dumpfile_mtime] "Sun Dec 18 01:51:03 2022"
+[dumpfile_size] 5089
 [savefile] "/home/tarn/projects/snickerdoodle/third/core.gtkw"
 [timestart] 0
 [size] 3836 1042
 [pos] -2156 -616
-*-27.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-27.000000 200600000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb_core.
 [treeopen] top.tb_core.u_ut.
-[treeopen] top.tb_core.u_ut.instruction_executor.
-[treeopen] top.tb_core.u_ut.instruction_executor.control_reg.
-[treeopen] top.tb_core.u_ut.instruction_executor.decoder0.
-[treeopen] top.tb_core.u_ut.instruction_executor.decoder1.
 [treeopen] top.tb_core.u_ut.reg_il.
+[treeopen] top.tb_core.u_ut.reg_r.
+[treeopen] top.tb_core.u_ut.reg_x.
+[treeopen] top.tb_core.u_ut.reg_y.
 [sst_width] 258
-[signals_width] 182
+[signals_width] 214
 [sst_expanded] 1
 [sst_vpaned_height] 500
 @28
 top.tb_core.t_reset
 top.tb_core.t_clk
-#{top.tb_core.u_ut.step[2:0]} top.tb_core.u_ut.step[2] top.tb_core.u_ut.step[1] top.tb_core.u_ut.step[0]
-top.tb_core.u_ut.icg.send_enable
-top.tb_core.u_ut.icg.load_enable
-top.tb_core.u_ut.instruction_cycle_control.send_mem
-top.tb_core.u_ut.instruction_cycle_control.increment_pc
-top.tb_core.u_ut.instruction_cycle_control.load_control_word
-top.tb_core.u_ut.instruction_cycle_control.load_reg_il
-+{IL reset} top.tb_core.u_ut.reg_il.clr
-@22
-+{IL out} #{top.tb_core.u_ut.reg_il.d_out[7:0]} top.tb_core.u_ut.reg_il.d_out[7] top.tb_core.u_ut.reg_il.d_out[6] top.tb_core.u_ut.reg_il.d_out[5] top.tb_core.u_ut.reg_il.d_out[4] top.tb_core.u_ut.reg_il.d_out[3] top.tb_core.u_ut.reg_il.d_out[2] top.tb_core.u_ut.reg_il.d_out[1] top.tb_core.u_ut.reg_il.d_out[0]
+@200
+-
 @28
-top.tb_core.u_ut.instruction_cycle_control.execute_instruction
-#{top.tb_core.u_ut.pc_out[2:0]} top.tb_core.u_ut.pc_out[2] top.tb_core.u_ut.pc_out[1] top.tb_core.u_ut.pc_out[0]
+top.tb_core.u_ut.icg.load_enable
+top.tb_core.u_ut.icg.send_enable
 @22
 #{top.tb_core.u_ut.data_bus[7:0]} top.tb_core.u_ut.data_bus[7] top.tb_core.u_ut.data_bus[6] top.tb_core.u_ut.data_bus[5] top.tb_core.u_ut.data_bus[4] top.tb_core.u_ut.data_bus[3] top.tb_core.u_ut.data_bus[2] top.tb_core.u_ut.data_bus[1] top.tb_core.u_ut.data_bus[0]
-+{Control Word} #{top.tb_core.u_ut.instruction_executor.control_reg.d_out[7:0]} top.tb_core.u_ut.instruction_executor.control_reg.d_out[7] top.tb_core.u_ut.instruction_executor.control_reg.d_out[6] top.tb_core.u_ut.instruction_executor.control_reg.d_out[5] top.tb_core.u_ut.instruction_executor.control_reg.d_out[4] top.tb_core.u_ut.instruction_executor.control_reg.d_out[3] top.tb_core.u_ut.instruction_executor.control_reg.d_out[2] top.tb_core.u_ut.instruction_executor.control_reg.d_out[1] top.tb_core.u_ut.instruction_executor.control_reg.d_out[0]
-#{top.tb_core.u_ut.instruction_executor.decoder0.d_out[15:0]} top.tb_core.u_ut.instruction_executor.decoder0.d_out[15] top.tb_core.u_ut.instruction_executor.decoder0.d_out[14] top.tb_core.u_ut.instruction_executor.decoder0.d_out[13] top.tb_core.u_ut.instruction_executor.decoder0.d_out[12] top.tb_core.u_ut.instruction_executor.decoder0.d_out[11] top.tb_core.u_ut.instruction_executor.decoder0.d_out[10] top.tb_core.u_ut.instruction_executor.decoder0.d_out[9] top.tb_core.u_ut.instruction_executor.decoder0.d_out[8] top.tb_core.u_ut.instruction_executor.decoder0.d_out[7] top.tb_core.u_ut.instruction_executor.decoder0.d_out[6] top.tb_core.u_ut.instruction_executor.decoder0.d_out[5] top.tb_core.u_ut.instruction_executor.decoder0.d_out[4] top.tb_core.u_ut.instruction_executor.decoder0.d_out[3] top.tb_core.u_ut.instruction_executor.decoder0.d_out[2] top.tb_core.u_ut.instruction_executor.decoder0.d_out[1] top.tb_core.u_ut.instruction_executor.decoder0.d_out[0]
-@23
-#{top.tb_core.u_ut.instruction_executor.decoder1.d_out[15:0]} top.tb_core.u_ut.instruction_executor.decoder1.d_out[15] top.tb_core.u_ut.instruction_executor.decoder1.d_out[14] top.tb_core.u_ut.instruction_executor.decoder1.d_out[13] top.tb_core.u_ut.instruction_executor.decoder1.d_out[12] top.tb_core.u_ut.instruction_executor.decoder1.d_out[11] top.tb_core.u_ut.instruction_executor.decoder1.d_out[10] top.tb_core.u_ut.instruction_executor.decoder1.d_out[9] top.tb_core.u_ut.instruction_executor.decoder1.d_out[8] top.tb_core.u_ut.instruction_executor.decoder1.d_out[7] top.tb_core.u_ut.instruction_executor.decoder1.d_out[6] top.tb_core.u_ut.instruction_executor.decoder1.d_out[5] top.tb_core.u_ut.instruction_executor.decoder1.d_out[4] top.tb_core.u_ut.instruction_executor.decoder1.d_out[3] top.tb_core.u_ut.instruction_executor.decoder1.d_out[2] top.tb_core.u_ut.instruction_executor.decoder1.d_out[1] top.tb_core.u_ut.instruction_executor.decoder1.d_out[0]
+@200
+-
+@c00024
++{instruction cycle step} #{top.tb_core.u_ut.step[2:0]} top.tb_core.u_ut.step[2] top.tb_core.u_ut.step[1] top.tb_core.u_ut.step[0]
+@28
+top.tb_core.u_ut.step[2]
+top.tb_core.u_ut.step[1]
+top.tb_core.u_ut.step[0]
+@1401200
+-group_end
+@22
++{program counter} #{top.tb_core.u_ut.pc_out[2:0]} top.tb_core.u_ut.pc_out[2] top.tb_core.u_ut.pc_out[1] top.tb_core.u_ut.pc_out[0]
++{argument} #{top.tb_core.u_ut.reg_il.d_out[7:0]} top.tb_core.u_ut.reg_il.d_out[7] top.tb_core.u_ut.reg_il.d_out[6] top.tb_core.u_ut.reg_il.d_out[5] top.tb_core.u_ut.reg_il.d_out[4] top.tb_core.u_ut.reg_il.d_out[3] top.tb_core.u_ut.reg_il.d_out[2] top.tb_core.u_ut.reg_il.d_out[1] top.tb_core.u_ut.reg_il.d_out[0]
+#{top.tb_core.u_ut.inst_load_control[15:0]} top.tb_core.u_ut.inst_load_control[15] top.tb_core.u_ut.inst_load_control[14] top.tb_core.u_ut.inst_load_control[13] top.tb_core.u_ut.inst_load_control[12] top.tb_core.u_ut.inst_load_control[11] top.tb_core.u_ut.inst_load_control[10] top.tb_core.u_ut.inst_load_control[9] top.tb_core.u_ut.inst_load_control[8] top.tb_core.u_ut.inst_load_control[7] top.tb_core.u_ut.inst_load_control[6] top.tb_core.u_ut.inst_load_control[5] top.tb_core.u_ut.inst_load_control[4] top.tb_core.u_ut.inst_load_control[3] top.tb_core.u_ut.inst_load_control[2] top.tb_core.u_ut.inst_load_control[1] top.tb_core.u_ut.inst_load_control[0]
+#{top.tb_core.u_ut.inst_send_control[15:0]} top.tb_core.u_ut.inst_send_control[15] top.tb_core.u_ut.inst_send_control[14] top.tb_core.u_ut.inst_send_control[13] top.tb_core.u_ut.inst_send_control[12] top.tb_core.u_ut.inst_send_control[11] top.tb_core.u_ut.inst_send_control[10] top.tb_core.u_ut.inst_send_control[9] top.tb_core.u_ut.inst_send_control[8] top.tb_core.u_ut.inst_send_control[7] top.tb_core.u_ut.inst_send_control[6] top.tb_core.u_ut.inst_send_control[5] top.tb_core.u_ut.inst_send_control[4] top.tb_core.u_ut.inst_send_control[3] top.tb_core.u_ut.inst_send_control[2] top.tb_core.u_ut.inst_send_control[1] top.tb_core.u_ut.inst_send_control[0]
+@28
++{reg il send} top.tb_core.u_ut.reg_il.en
++{reg r load} top.tb_core.u_ut.reg_r.clk
+@22
++{reg r} #{top.tb_core.u_ut.reg_r.internal[7:0]} top.tb_core.u_ut.reg_r.internal[7] top.tb_core.u_ut.reg_r.internal[6] top.tb_core.u_ut.reg_r.internal[5] top.tb_core.u_ut.reg_r.internal[4] top.tb_core.u_ut.reg_r.internal[3] top.tb_core.u_ut.reg_r.internal[2] top.tb_core.u_ut.reg_r.internal[1] top.tb_core.u_ut.reg_r.internal[0]
++{reg x} #{top.tb_core.u_ut.reg_x.internal[7:0]} top.tb_core.u_ut.reg_x.internal[7] top.tb_core.u_ut.reg_x.internal[6] top.tb_core.u_ut.reg_x.internal[5] top.tb_core.u_ut.reg_x.internal[4] top.tb_core.u_ut.reg_x.internal[3] top.tb_core.u_ut.reg_x.internal[2] top.tb_core.u_ut.reg_x.internal[1] top.tb_core.u_ut.reg_x.internal[0]
++{reg y} #{top.tb_core.u_ut.reg_y.internal[7:0]} top.tb_core.u_ut.reg_y.internal[7] top.tb_core.u_ut.reg_y.internal[6] top.tb_core.u_ut.reg_y.internal[5] top.tb_core.u_ut.reg_y.internal[4] top.tb_core.u_ut.reg_y.internal[3] top.tb_core.u_ut.reg_y.internal[2] top.tb_core.u_ut.reg_y.internal[1] top.tb_core.u_ut.reg_y.internal[0]
 [pattern_trace] 1
 [pattern_trace] 0

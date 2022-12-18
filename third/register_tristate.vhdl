@@ -12,19 +12,21 @@ entity reg_tristate is
 end entity reg_tristate;
 
 architecture rtl of reg_tristate is
+  signal internal: unsigned(n-1 downto 0);
 begin
-process(clk, clr) is
-begin
-  if clr = '1' then
-    d_out <= to_unsigned(0, d_out'length);
-  elsif en = '1' then
-    if rising_edge(clk) then
-      if clr = '0' and load = '1' then
-        d_out <= d_in;
+  process(clk, clr, load) is
+  begin
+    if clr = '1' then
+      internal <= to_unsigned(0, internal'length);
+    else
+      if rising_edge(clk) then
+        if clr = '0' and load = '1' then
+          internal <= d_in;
+        end if;
       end if;
     end if;
-  else
-    d_out <= "ZZZZZZZZ";
-  end if;
-end process;
+  end process;
+
+  d_out <= internal when en = '1' else "ZZZZZZZZ";
+
 end architecture rtl;

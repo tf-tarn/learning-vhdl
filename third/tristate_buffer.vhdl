@@ -2,7 +2,7 @@
 -- VHDL model for tri state driver
 -- by Weijun Zhang, 05/2001
 --
--- this friver often used to control system outputs
+-- this friver often used to instruction_decoder system outputs
 ---------------------------------------------------------
 
 library ieee;
