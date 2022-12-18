@@ -8,7 +8,8 @@ function run_the_thing {
         cd build
         # array=( "${SOURCES[@]/#/${DIR}/}" )
         array=( "${SOURCES[@]/#/../}" )
-        echo ${array[@]}
+        ls -l ${array[@]}
+        
         ghdl -a "${array[@]}"
         ls -l 
         ghdl -r $TARGET --wave=wave.ghw
@@ -95,8 +96,15 @@ function doit {
             TARGET=TB_step_decoder
             run_the_thing
             ;;
+        alu)
+            DIR=$PWD
+            SOURCES=("register.vhdl" "register_tristate.vhdl" "alu.vhdl" "alu.tb.vhdl")
+            TARGET=TB_alu
+            run_the_thing
+            ;;
 
         all)
+            doit alu
             doit adder
             doit instruction_decoder
             doit core

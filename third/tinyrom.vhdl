@@ -36,9 +36,9 @@ begin
           when "110"  =>  d_out <=  x"8b";
           when "111"  =>  d_out <=  x"00";
           when others =>  d_out <=  x"00";
-        end case;
-      else
-        d_out <= "LLLLLLLL";
-      end if;
+      end case;
+    else
+      d_out <= "ZZZZZZZZ";
+    end if;
   end process;
 end behavior;
