@@ -57,7 +57,6 @@ end procedure pulse;
       T_clk <= '0';
       T_clk2 <= '0';
       pulse(T_reset);
-      report "reset" severity warning;
 
       wait for 10 ns;
 

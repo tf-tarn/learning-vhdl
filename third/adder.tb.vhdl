@@ -49,7 +49,7 @@ begin
       assert co = patterns(i).co
         report "bad carry out value" severity error;
     end loop;
-    assert false report "end of test" severity note;
+    -- assert false report "end of test" severity note;
     --  Wait forever; this will finish the simulation.
     wait;
   end process;

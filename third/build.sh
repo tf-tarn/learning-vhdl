@@ -8,10 +8,7 @@ function run_the_thing {
         cd build
         # array=( "${SOURCES[@]/#/${DIR}/}" )
         array=( "${SOURCES[@]/#/../}" )
-        ls -l ${array[@]}
-        
         ghdl -a "${array[@]}"
-        ls -l 
         ghdl -r $TARGET --wave=wave.ghw
     )
 }
