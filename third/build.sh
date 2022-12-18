@@ -34,6 +34,8 @@ function doit {
                           "gate_or.vhdl" \
                           "instruction_cycle_generator.vhdl" \
                           "step_decoder.vhdl" \
+                          "register_incrementable.vhdl" \
+                          "pc.vhdl" \
                           "core.vhdl" \
                           "core.tb.vhdl")
             TARGET=TB_$1
@@ -97,6 +99,24 @@ function doit {
             DIR=$PWD
             SOURCES=("register.vhdl" "register_tristate.vhdl" "alu.vhdl" "alu.tb.vhdl")
             TARGET=TB_alu
+            run_the_thing
+            ;;
+        register_incrementable)
+            DIR=$PWD
+            SOURCES=("register_incrementable.vhdl" "register_incrementable.tb.vhdl")
+            TARGET=TB_register_incrementable
+            run_the_thing
+            ;;
+        pc)
+            DIR=$PWD
+            SOURCES=("register.vhdl" "register_incrementable.vhdl" "pc.vhdl" "pc.tb.vhdl")
+            TARGET=TB_pc
+            run_the_thing
+            ;;
+        sr)
+            DIR=$PWD
+            SOURCES=("sr.vhdl" "sr.tb.vhdl")
+            TARGET=TB_sr
             run_the_thing
             ;;
 

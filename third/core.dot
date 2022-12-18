@@ -1,0 +1,188 @@
+digraph m101 {
+  p0 [label="\\clk"];
+  p0 -> i19 [label="n1"];
+
+  p1 [label="\\reset"];
+  p1 -> i81 [label="n2"];
+  p1 -> i74 [label="n2"];
+  p1 -> i67 [label="n2"];
+  p1 -> i56 [label="n2"];
+  p1 -> i50 [label="n2"];
+  p1 -> i44 [label="n2"];
+  p1 -> i19 [label="n2"];
+
+  i3 [label="$signal"];
+  i3 -> i60 [label="n3"];
+
+  i4 [label="$signal"];
+  i4 -> i81 [label="n4"];
+  i4 -> i74 [label="n4"];
+  i4 -> i67 [label="n4"];
+  i4 -> i56 [label="n4"];
+  i4 -> i44 [label="n4"];
+
+  i5 [label="$signal"];
+  i5 -> i31 [label="n5"];
+
+  i7 [label="$signal"];
+  i7 -> i44 [label="n7"];
+  i7 -> i31 [label="n7"];
+
+  i8 [label="$signal"];
+  i8 -> i44 [label="n8"];
+  i8 -> i31 [label="n8"];
+
+  i9 [label="$signal"];
+  i9 -> i50 [label="n9"];
+
+  i10 [label="$signal"];
+  i10 -> i44 [label="n10"];
+
+  i11 [label="$signal"];
+  i11 -> i56 [label="n11"];
+
+  i12 [label="$signal"];
+  i12 -> i44 [label="n12"];
+
+  i13 [label="$signal"];
+  i13 -> i60 [label="n13"];
+
+  i14 [label="$signal"];
+  i14 -> i79 [label="n14"];
+  i14 -> i72 [label="n14"];
+  i14 -> i65 [label="n14"];
+  i14 -> i54 [label="n14"];
+
+  i15 [label="$signal"];
+  i15 -> i78 [label="n15"];
+  i15 -> i71 [label="n15"];
+  i15 -> i64 [label="n15"];
+
+  i16 [label="$signal"];
+  i16 -> i5 [label="n16"];
+
+  i17 [label="$signal"];
+  i17 -> i7 [label="n17"];
+
+  i18 [label="$signal"];
+  i18 -> i8 [label="n18"];
+
+  i19 [label="\instruction_cycle_generator"];
+  i19 -> i16 [label="n19"];
+  i19 -> i17 [label="n20"];
+  i19 -> i18 [label="n21"];
+
+  i26 [label="$signal"];
+  i26 -> i9 [label="n28"];
+
+  i27 [label="$signal"];
+  i27 -> i10 [label="n29"];
+
+  i28 [label="$signal"];
+  i28 -> i11 [label="n30"];
+
+  i29 [label="$signal"];
+  i29 -> i12 [label="n31"];
+
+  i30 [label="$signal"];
+  i30 -> i13 [label="n32"];
+
+  i31 [label="\step_decoder"];
+  i31 -> i26 [label="n33"];
+  i31 -> i27 [label="n34"];
+  i31 -> i28 [label="n35"];
+  i31 -> i29 [label="n36"];
+  i31 -> i30 [label="n37"];
+
+  i42 [label="$signal"];
+  i42 -> i15 [label="n48"];
+
+  i43 [label="$signal"];
+  i43 -> i14 [label="n49"];
+
+  i44 [label="\instruction_decoder"];
+  i44 -> i42 [label="n50"];
+  i44 -> i43 [label="n51"];
+
+  i49 [label="$signal"];
+  i49 -> i3 [label="n56"];
+
+  i50 [label="\upcounter_3"];
+  i50 -> i49 [label="n57"];
+
+  i53 [label="$const_UB32"];
+  i53 -> i56 [label="n60"];
+
+  i54 [label="$extract"];
+  i54 -> i56 [label="n61"];
+
+  i55 [label="$signal"];
+  i55 -> i84 [label="n62"];
+
+  i56 [label="\reg_tristate_8"];
+  i56 -> i55 [label="n63"];
+
+  i59 [label="$signal"];
+  i59 -> i84 [label="n66"];
+
+  i60 [label="\tinyrom"];
+  i60 -> i59 [label="n67"];
+
+  i63 [label="$const_UB32"];
+  i63 -> i67 [label="n70"];
+
+  i64 [label="$extract"];
+  i64 -> i67 [label="n71"];
+
+  i65 [label="$extract"];
+  i65 -> i67 [label="n72"];
+
+  i66 [label="$signal"];
+  i66 -> i85 [label="n73"];
+
+  i67 [label="\reg_tristate_8"];
+  i67 -> i66 [label="n74"];
+
+  i70 [label="$const_UB32"];
+  i70 -> i74 [label="n77"];
+
+  i71 [label="$extract"];
+  i71 -> i74 [label="n78"];
+
+  i72 [label="$extract"];
+  i72 -> i74 [label="n79"];
+
+  i73 [label="$signal"];
+  i73 -> i86 [label="n80"];
+
+  i74 [label="\reg_tristate_8"];
+  i74 -> i73 [label="n81"];
+
+  i77 [label="$const_UB32"];
+  i77 -> i81 [label="n84"];
+
+  i78 [label="$extract"];
+  i78 -> i81 [label="n85"];
+
+  i79 [label="$extract"];
+  i79 -> i81 [label="n86"];
+
+  i80 [label="$signal"];
+  i80 -> i87 [label="n87"];
+
+  i81 [label="\reg_tristate_8"];
+  i81 -> i80 [label="n88"];
+
+  i84 [label="$resolver"];
+  i84 -> i85 [label="n91"];
+
+  i85 [label="$resolver"];
+  i85 -> i86 [label="n92"];
+
+  i86 [label="$resolver"];
+  i86 -> i87 [label="n93"];
+
+  i87 [label="$resolver"];
+  i87 -> i4 [label="n94"];
+
+}

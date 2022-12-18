@@ -16,11 +16,11 @@ begin
   begin
     if en = '1' then
       case addr_in is
-          when "000"  =>  d_out <=  x"83";  -- mov jmpl ih, 2
-          when "001"  =>  d_out <=  x"00";
-          when "010"  =>  d_out <=  x"82";  -- mov jmph il, 0
+          when "000"  =>  d_out <=  x"82";  -- mov jmpl il ,2
+          when "001"  =>  d_out <=  x"33";
+          when "010"  =>  d_out <=  x"c0";  -- jump
           when "011"  =>  d_out <=  x"00";
-          when "100"  =>  d_out <=  x"c0";  -- jump
+          when "100"  =>  d_out <=  x"00";
           when "101"  =>  d_out <=  x"00";
           when "110"  =>  d_out <=  x"00";
           when "111"  =>  d_out <=  x"00";

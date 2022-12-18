@@ -93,7 +93,7 @@ component step_decoder is
     load_enable: in std_logic;
 
     increment_pc: out std_logic;
-    load_instruction_decoder_word: out std_logic;
+    load_control_word: out std_logic;
     load_reg_il: out std_logic;
 
     execute_instruction: out std_logic;
@@ -101,6 +101,18 @@ component step_decoder is
     send_mem: out std_logic
   );
 end component step_decoder;
+
+  component program_counter is
+    generic(n: natural := 8);
+    port(
+      reset, clk     : in  std_logic;
+      update         : in std_logic;
+      increment      : in std_logic;
+      d_in           : in  unsigned(n-1 downto 0);
+      d_out          : out unsigned(n-1 downto 0)
+    );
+  end component;
+
 
 signal pc_out       : unsigned(2 downto 0);
 signal data_bus     : unsigned(7 downto 0);
@@ -111,7 +123,7 @@ signal send_enable   : std_logic;
 signal load_enable   : std_logic;
 
 signal increment_pc: std_logic;
-signal load_instruction_decoder_word: std_logic;
+signal load_control_word: std_logic;
 signal load_reg_il: std_logic;
 signal execute_instruction: std_logic;
 signal send_mem: std_logic;
@@ -119,16 +131,19 @@ signal send_mem: std_logic;
 signal inst_send_control: unsigned(15 downto 0);
 signal inst_load_control: unsigned(15 downto 0);
 
+constant SEND_R_IDX  : natural := 11;
 constant SEND_IL_IDX : natural := 8;
-constant SEND_R_IDX : natural := 11;
-constant SEND_X_IDX : natural := 5;
-constant SEND_Y_IDX : natural := 1;
+constant SEND_X_IDX  : natural := 5;
+constant SEND_Y_IDX  : natural := 1;
 
-constant LOAD_R_IDX : natural := 11;
-constant LOAD_X_IDX : natural := 5;
-constant LOAD_Y_IDX : natural := 1;
+constant LOAD_R_IDX  : natural := 11;
+constant LOAD_X_IDX  : natural := 5;
+constant LOAD_JMPL   : natural := 2;
+constant LOAD_Y_IDX  : natural := 1;
 
 begin
+------------------------------------------------------------
+-- Control stuff
   icg: instruction_cycle_generator
     port map (
       clk => clk,
@@ -145,7 +160,7 @@ begin
       load_enable => load_enable,
 
       increment_pc => increment_pc,
-      load_instruction_decoder_word => load_instruction_decoder_word,
+      load_control_word => load_control_word,
       load_reg_il => load_reg_il,
 
       execute_instruction => execute_instruction,
@@ -156,7 +171,7 @@ begin
   the_instruction_decoder: instruction_decoder
     port map (
       reset => reset,
-      clk => load_instruction_decoder_word,
+      clk => load_control_word,
       en => execute_instruction,
       en0 => load_enable,
       en1 => send_enable,
@@ -165,13 +180,16 @@ begin
       out1 => inst_send_control
       );
 
-  pc: upcounter
+  pc: program_counter
     port map (
       reset => reset,
-      clk => increment_pc,
-      d_out => pc_out
+      clk => inst_load_control(LOAD_JMPL),
+      update => '0', -- do_jump or so
+      increment => increment_pc,
+      d_in => data_bus,
+      d_out(2 downto 0) => pc_out
     );
-
+  
   reg_il: reg_tristate
     port map (
       clr => reset,

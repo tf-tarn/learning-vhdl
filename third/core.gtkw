@@ -1,24 +1,26 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sun Dec 18 01:54:07 2022
+[*] Sun Dec 18 12:09:38 2022
 [*]
 [dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
-[dumpfile_mtime] "Sun Dec 18 01:51:03 2022"
-[dumpfile_size] 5089
+[dumpfile_mtime] "Sun Dec 18 12:07:21 2022"
+[dumpfile_size] 5292
 [savefile] "/home/tarn/projects/snickerdoodle/third/core.gtkw"
 [timestart] 0
 [size] 3836 1042
 [pos] -2156 -616
-*-27.000000 200600000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-27.000000 816700000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb_core.
 [treeopen] top.tb_core.u_ut.
+[treeopen] top.tb_core.u_ut.mem.
+[treeopen] top.tb_core.u_ut.pc.
 [treeopen] top.tb_core.u_ut.reg_il.
 [treeopen] top.tb_core.u_ut.reg_r.
 [treeopen] top.tb_core.u_ut.reg_x.
-[treeopen] top.tb_core.u_ut.reg_y.
+[treeopen] top.tb_core.u_ut.the_instruction_decoder.
 [sst_width] 258
-[signals_width] 214
+[signals_width] 247
 [sst_expanded] 1
 [sst_vpaned_height] 500
 @28
@@ -53,5 +55,13 @@ top.tb_core.u_ut.step[0]
 +{reg r} #{top.tb_core.u_ut.reg_r.internal[7:0]} top.tb_core.u_ut.reg_r.internal[7] top.tb_core.u_ut.reg_r.internal[6] top.tb_core.u_ut.reg_r.internal[5] top.tb_core.u_ut.reg_r.internal[4] top.tb_core.u_ut.reg_r.internal[3] top.tb_core.u_ut.reg_r.internal[2] top.tb_core.u_ut.reg_r.internal[1] top.tb_core.u_ut.reg_r.internal[0]
 +{reg x} #{top.tb_core.u_ut.reg_x.internal[7:0]} top.tb_core.u_ut.reg_x.internal[7] top.tb_core.u_ut.reg_x.internal[6] top.tb_core.u_ut.reg_x.internal[5] top.tb_core.u_ut.reg_x.internal[4] top.tb_core.u_ut.reg_x.internal[3] top.tb_core.u_ut.reg_x.internal[2] top.tb_core.u_ut.reg_x.internal[1] top.tb_core.u_ut.reg_x.internal[0]
 +{reg y} #{top.tb_core.u_ut.reg_y.internal[7:0]} top.tb_core.u_ut.reg_y.internal[7] top.tb_core.u_ut.reg_y.internal[6] top.tb_core.u_ut.reg_y.internal[5] top.tb_core.u_ut.reg_y.internal[4] top.tb_core.u_ut.reg_y.internal[3] top.tb_core.u_ut.reg_y.internal[2] top.tb_core.u_ut.reg_y.internal[1] top.tb_core.u_ut.reg_y.internal[0]
+@200
+-
+@28
+#{top.tb_core.u_ut.mem.addr_in[2:0]} top.tb_core.u_ut.mem.addr_in[2] top.tb_core.u_ut.mem.addr_in[1] top.tb_core.u_ut.mem.addr_in[0]
+@22
++{mem out} #{top.tb_core.u_ut.mem.d_out[7:0]} top.tb_core.u_ut.mem.d_out[7] top.tb_core.u_ut.mem.d_out[6] top.tb_core.u_ut.mem.d_out[5] top.tb_core.u_ut.mem.d_out[4] top.tb_core.u_ut.mem.d_out[3] top.tb_core.u_ut.mem.d_out[2] top.tb_core.u_ut.mem.d_out[1] top.tb_core.u_ut.mem.d_out[0]
++{control word} #{top.tb_core.u_ut.the_instruction_decoder.internal[7:0]} top.tb_core.u_ut.the_instruction_decoder.internal[7] top.tb_core.u_ut.the_instruction_decoder.internal[6] top.tb_core.u_ut.the_instruction_decoder.internal[5] top.tb_core.u_ut.the_instruction_decoder.internal[4] top.tb_core.u_ut.the_instruction_decoder.internal[3] top.tb_core.u_ut.the_instruction_decoder.internal[2] top.tb_core.u_ut.the_instruction_decoder.internal[1] top.tb_core.u_ut.the_instruction_decoder.internal[0]
++{pc internal} #{top.tb_core.u_ut.pc.internal[7:0]} top.tb_core.u_ut.pc.internal[7] top.tb_core.u_ut.pc.internal[6] top.tb_core.u_ut.pc.internal[5] top.tb_core.u_ut.pc.internal[4] top.tb_core.u_ut.pc.internal[3] top.tb_core.u_ut.pc.internal[2] top.tb_core.u_ut.pc.internal[1] top.tb_core.u_ut.pc.internal[0]
 [pattern_trace] 1
 [pattern_trace] 0
