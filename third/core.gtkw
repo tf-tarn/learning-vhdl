@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sun Dec 18 12:09:38 2022
+[*] Sun Dec 18 14:48:57 2022
 [*]
 [dumpfile] "/home/tarn/projects/snickerdoodle/third/build/wave.ghw"
-[dumpfile_mtime] "Sun Dec 18 12:07:21 2022"
-[dumpfile_size] 5292
+[dumpfile_mtime] "Sun Dec 18 14:47:38 2022"
+[dumpfile_size] 5369
 [savefile] "/home/tarn/projects/snickerdoodle/third/core.gtkw"
 [timestart] 0
 [size] 3836 1042
@@ -63,5 +63,12 @@ top.tb_core.u_ut.step[0]
 +{mem out} #{top.tb_core.u_ut.mem.d_out[7:0]} top.tb_core.u_ut.mem.d_out[7] top.tb_core.u_ut.mem.d_out[6] top.tb_core.u_ut.mem.d_out[5] top.tb_core.u_ut.mem.d_out[4] top.tb_core.u_ut.mem.d_out[3] top.tb_core.u_ut.mem.d_out[2] top.tb_core.u_ut.mem.d_out[1] top.tb_core.u_ut.mem.d_out[0]
 +{control word} #{top.tb_core.u_ut.the_instruction_decoder.internal[7:0]} top.tb_core.u_ut.the_instruction_decoder.internal[7] top.tb_core.u_ut.the_instruction_decoder.internal[6] top.tb_core.u_ut.the_instruction_decoder.internal[5] top.tb_core.u_ut.the_instruction_decoder.internal[4] top.tb_core.u_ut.the_instruction_decoder.internal[3] top.tb_core.u_ut.the_instruction_decoder.internal[2] top.tb_core.u_ut.the_instruction_decoder.internal[1] top.tb_core.u_ut.the_instruction_decoder.internal[0]
 +{pc internal} #{top.tb_core.u_ut.pc.internal[7:0]} top.tb_core.u_ut.pc.internal[7] top.tb_core.u_ut.pc.internal[6] top.tb_core.u_ut.pc.internal[5] top.tb_core.u_ut.pc.internal[4] top.tb_core.u_ut.pc.internal[3] top.tb_core.u_ut.pc.internal[2] top.tb_core.u_ut.pc.internal[1] top.tb_core.u_ut.pc.internal[0]
+@28
+top.tb_core.u_ut.jump_flag.clk
+top.tb_core.u_ut.jump_flag.reset
+top.tb_core.u_ut.jump_flag.set
+top.tb_core.u_ut.jump_flag.q
+@29
+top.tb_core.u_ut.perform_jump
 [pattern_trace] 1
 [pattern_trace] 0

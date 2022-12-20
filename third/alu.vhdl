@@ -41,6 +41,7 @@ architecture behavior of alu is
   signal internal_b: unsigned(7 downto 0) := to_unsigned(0, 8);
   signal internal_c: unsigned(7 downto 0) := to_unsigned(0, 8);
   signal internal_select: unsigned(7 downto 0) := to_unsigned(0, 8);
+  signal instruction_count: unsigned(15 downto 0) := to_unsigned(0, 16);
 
 begin
 
@@ -93,5 +94,12 @@ begin
       when x"04" => internal_c <= internal_a + internal_b;
       when others => internal_c <= x"00";
     end case;
+  end process;
+
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      instruction_count <= instruction_count + 1;
+    end if;
   end process;
 end behavior;
