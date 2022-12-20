@@ -9,7 +9,6 @@ architecture TB_sr of TB_sr is
 
   component sr is
     port(
-      clk: in std_logic;
       set: in std_logic;
       reset: in std_logic;
       q: out std_logic
@@ -17,7 +16,6 @@ architecture TB_sr of TB_sr is
   end component;
 
 
-  signal clk: std_logic := '0';
   signal set: std_logic := '0';
   signal reset: std_logic := '0';
   signal q: std_logic := '0';
@@ -31,26 +29,30 @@ architecture TB_sr of TB_sr is
   end procedure pulse;
   
     begin
-      U_UT: sr port map (clk, set, reset, q);
+      U_UT: sr port map (set, reset, q);
     process
     begin
       pulse(reset);
 
+      wait for 10 ns;
       set <= '1';
-      pulse(clk);
+      wait for 10 ns;
       set <= '0';
       wait for 10 ns;
       assert(q = '1') report "fail: set"
         severity warning;
       
+      wait for 10 ns;
       reset <= '1';
       wait for 10 ns;
       assert(q = '0') report "fail: reset"
         severity warning;
 
+      wait for 10 ns;
       reset <= '1';
+      wait for 10 ns;
       set <= '1';
-      pulse(clk);
+      wait for 10 ns;
       set <= '0';
       wait for 10 ns;
       assert(q = '0') report "fail: reset with set = '1'"
