@@ -298,34 +298,4 @@ begin
       );
   end generate;
 
-  -- reg_r: reg_tristate
-  --   port map (
-  --     clr => reset,
-  --     load => '1',
-  --     clk => inst_load_control(LOAD_R_IDX),
-  --     en => inst_send_control(SEND_R_IDX),
-  --     d_in => data_bus,
-  --     d_out => data_bus
-  --   );
-
-  -- reg_x: reg_tristate
-  --   port map (
-  --     clr => reset,
-  --     load => '1',
-  --     clk => inst_load_control(LOAD_X_IDX),
-  --     en => inst_send_control(SEND_X_IDX),
-  --     d_in => data_bus,
-  --     d_out => data_bus
-  --   );
-
-  -- reg_y: reg_tristate
-  --   port map (
-  --     clr => reset,
-  --     load => '1',
-  --     clk => inst_load_control(LOAD_Y_IDX),
-  --     en => inst_send_control(SEND_Y_IDX),
-  --     d_in => data_bus,
-  --     d_out => data_bus
-  --   );
-
 end struct;
