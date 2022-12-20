@@ -35,7 +35,9 @@ function doit {
                           "instruction_cycle_generator.vhdl" \
                           "step_decoder.vhdl" \
                           "register_incrementable.vhdl" \
+                          "alu.vhdl" \
                           "pc.vhdl" \
+                          "sr.vhdl" \
                           "core.vhdl" \
                           "core.tb.vhdl")
             TARGET=TB_$1
